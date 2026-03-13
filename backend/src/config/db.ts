@@ -24,7 +24,7 @@ export const databaseConnection = () => {
   return {
     database: String(process.env[`DB_${prefix}_NAME`]),
     username: String(process.env[`DB_${prefix}_USERNAME`]),
-    password: String(process.env[`DB_${prefix}_PASSWORD`]), // 🔹 force string
+    password: String(process.env[`DB_${prefix}_PASSWORD`]),
     port: Number(process.env[`DB_${prefix}_PORT`]),
   };
 };

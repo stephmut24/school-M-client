@@ -3,6 +3,3 @@ node_modules
 .env
 *.log
 dist/
-/generated/prisma
-
-/generated/prisma
