@@ -1,24 +1,26 @@
 import { DataTypes, Model, Optional, Sequelize } from "sequelize";
 
-interface TeacherAttributes {
+
+interface ParentAttributes {
     id: string
     userId: string
-    specialization?: string
+    occupation?: string
     createdAt?: Date
     updatedAt?: Date
 }
 
-type TeacherCreationAttributes = Optional<TeacherAttributes, 'id'>
+type ParentCreationAttributes = Optional<ParentAttributes, 'id'>
 
-class Teacher extends Model<TeacherAttributes, TeacherCreationAttributes> implements TeacherAttributes {
+class Parent extends Model<ParentAttributes, ParentCreationAttributes> implements ParentAttributes {
     public id!: string
     public userId!: string
-    public specialization!: string;
+    public occupation!: string;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }
+
 export default (sequelize: Sequelize) =>{
-    Teacher.init(
+    Parent.init(
         {
             id: {
                 type: DataTypes.UUID,
@@ -27,21 +29,22 @@ export default (sequelize: Sequelize) =>{
                 allowNull: false,
             },
             userId: {
-                type: DataTypes.STRING,
+                type: DataTypes.UUID,
                 allowNull: false,
                 unique: true,
                 references: {model: 'users', key:'id'}
             },
-            specialization: {
+            occupation:{
                 type: DataTypes.STRING,
                 allowNull: true
             }
         },
         {
             sequelize,
-            tableName: 'teachers',
+            tableName: 'parents',
             timestamps: true
         }
-    );
-    return Teacher
+
+    )
+    return Parent
 }

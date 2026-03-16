@@ -29,6 +29,12 @@ export enum AttendanceStatus {
     EXCUSED = 'EXCUSED'
 }
 
+export enum Term {
+    TERM_1 = 'TERM_1',
+    TERM_2 = 'TERM_2',
+    TERM_3 = 'TERM_3'
+}
+
 export enum DayOfWeek {
     MONDAY = 'MONDAY',
     TUESDAY = 'TUESDAY',

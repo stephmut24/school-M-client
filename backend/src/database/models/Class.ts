@@ -47,11 +47,11 @@ export default (sequelize: Sequelize) => {
             },
             mainTeacherId: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             capacity: {
                 type: DataTypes.NUMBER,
-                allowNull: false
+                allowNull: true
             }
         },
         {

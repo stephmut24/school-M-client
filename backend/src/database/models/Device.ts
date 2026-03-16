@@ -54,7 +54,7 @@ export default (sequelize: Sequelize) =>{
             },
             ipAddress:{
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: true
             },
             status: {
                 type: DataTypes.ENUM(...Object.values(DeviceStatus)),
