@@ -23,7 +23,7 @@ class User extends Model<UserAttributes, UserCreationAttributes> implements User
     public role!: Role;
     public firstName!: string;
     public lastName!: string;
-    public phoneNumber!: string;
+    public phoneNumber?: string;
     public isActive!: boolean;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
@@ -62,7 +62,7 @@ export default (sequelize: Sequelize) => {
         },
         phoneNumber: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             unique: true
         },
         isActive: {

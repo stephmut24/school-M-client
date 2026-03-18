@@ -3,7 +3,7 @@ import cors from "cors";
 import { config as DotEven } from "dotenv";
 DotEven();
 import { config } from "./config";
-import { mainRouter } from "./routes";
+import mainRouter from "./routes";
 import { Db } from "./database";
 
 const app: Express = express();

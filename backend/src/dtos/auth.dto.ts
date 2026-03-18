@@ -25,21 +25,21 @@ export const registerSchema = z.object({
             .min(1, 'Last name is required')
             .min(2, 'Last name must be at least 2 characters'),
         
-            phoneNumber: z  
-                .string()
-                .optional(),
+        phoneNumber: z  
+            .string()
+            .optional(),
 
-            role: z.enum(['STUDENT', 'PARENT'], {
-                error: 'Role must be STUDENT or PARENT'
-            }),
+        role: z.enum(['STUDENT', 'PARENT'], {
+            error: 'Role must be STUDENT or PARENT'
+        }),
 
-            deviceFingerprint: z
-                .string()
-                .min(1, 'Device fingerprint is required'),
+        deviceFingerprint: z
+            .string()
+            .min(1, 'Device fingerprint is required'),
 
-            deviceName: z   
-                .string()
-                .optional()
+        deviceName: z   
+            .string()
+            .optional()
     })
 })
 
@@ -50,13 +50,17 @@ export const loginSchema = z.object({
             .min(1, 'Email is required')
             .email('Invalid email format'),
         
-            password: z
-                .string()
-                .min(1, 'Password is required'),
+        password: z
+            .string()
+            .min(1, 'Password is required'),
 
-            deviceFingerprint: z
-                .string()
-                .min(1, 'Device fingerprint is required')
+        deviceFingerprint: z
+            .string()
+            .min(1, 'Device fingerprint is required'),
+
+        deviceName: z
+            .string()
+            .optional()
     })
 })
 export type RegisterInput = z.infer<typeof registerSchema>['body']
